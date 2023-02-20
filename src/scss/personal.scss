@@ -1,0 +1,230 @@
+.personal {
+
+  &__container {
+  }
+
+  &__header {
+    @include flex(space-between);
+    margin-bottom: rem(155);
+    @include adaptiveValue("margin-bottom", 155, 55, 768, 320, 1);
+
+    @media (max-width:$tablet){
+      flex-direction: column;
+      row-gap: rem(20);
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: rem(36);
+    line-height: math.div(44, 36);
+    max-width: rem(363);
+    width: 100%;
+  }
+
+  &__text {
+    font-size: rem(18);
+    line-height: math.div(28,18);
+    letter-spacing: -0.05em;
+    max-width: rem(700);
+    width: 100%;
+    margin-left: rem(15);
+  }
+
+  &__body {
+    @include flex(start);
+
+    @media (max-width:$tablet){
+      flex-direction: column;
+      justify-content: center;
+      row-gap: rem(50);
+    }
+  }
+
+  &__image {
+    max-width: 805px;
+    width: 100%;
+    max-height: 744px;
+    height: 100%;
+    margin-right: rem(82);
+
+    @media (max-width:$tablet){
+      margin-right: rem(0);
+      max-width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    max-width: rem(496);
+    width: 100%;
+    padding: 0 rem(20);
+
+    @media (max-width:$tablet){
+      margin-bottom: rem(30);
+      @include adaptiveValue("margin-top", 130, 20, 768, 425, 1);   
+    }
+  }
+
+  &__suptitle {
+    display: block;
+    font-weight: 600;
+    font-size: rem(24);
+    line-height: math.div(29, 24);
+    margin-top: rem(24);
+  }
+
+  &__descr {
+    font-size: rem(18);
+    line-height: math.div(28,18);
+    letter-spacing: -0.05em;
+    margin-top: rem(12);
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: rem(24);
+    @include adaptiveValue("font-size", 24, 14, 768, 425, 1);
+    line-height: math.div(29, 24);
+    margin-right: rem(17);
+    margin-bottom: rem(25);
+
+    @media (max-width:$mobile){
+      font-size: rem(24); 
+    }
+  }
+
+  &__wrap {
+    @include flex(center);
+    align-items: start;
+    
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-gap: rem(48);
+    margin-top: rem(-100);
+
+    @media (max-width:$tablet){
+      margin-top: rem(0);
+      grid-gap: 0;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 400px);
+    }
+
+    @media (max-width:$mobile){
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+    
+    .div1 {
+      background-image: url('../img/personal_item_2.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      grid-area: 1 / 3 / 3 / 4;
+      height: rem(370);
+
+      @media (max-width:$tablet){
+        grid-area: 1 / 1 / 2 / 2;
+        height: auto;
+      }
+
+      @media (max-width:$mobile){
+        display: none; 
+      }
+    }
+    .div2 {
+      background-image: url('../img/personal_item_3.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      grid-area: 3 / 1 / 6 / 2;
+      height: rem(500);
+
+      @media (max-width:$tablet){
+        grid-area: 1 / 2 / 2 / 3;
+        height: auto;
+      }
+
+      @media (max-width:$mobile){
+        grid-area: 1 / 1 / 2 / 2;
+      }
+    }
+    .div3 {
+      background-image: url('../img/personal_item_4.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      grid-area: 2 / 2 / 5 / 3;
+      height: rem(500);
+
+      @media (max-width:$tablet){
+        height: auto;
+        grid-area: 2 / 1 / 3 / 2;
+      }
+    }
+    .div4 {
+      background-image: url('../img/personal_item_5.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      grid-area: 3 / 3 / 6 / 4;
+      height: rem(500);
+
+      @media (max-width:$tablet){
+        height: auto;
+        grid-area: 2 / 2 / 3 / 3;
+      }
+
+      @media (max-width:$mobile){
+        grid-area: 3 / 1 / 4 / 2;
+      }
+    }
+    .div5 {
+      grid-area: 5 / 2 / 6 / 3;
+      height: rem(140);
+      text-align: center;
+      max-width: rem(388);
+      margin: 0 auto;
+      margin-top: rem(-70);
+      @include adaptiveValue("font-size", 16, 14, 768, 425, 1);
+      
+      @media (max-width:$tablet){
+        margin-top: rem(0);
+        padding: rem(15);
+        grid-area: 3 / 2 / 4 /3;
+        margin: auto 0;
+      }
+
+      @media (max-width:$mobile){
+        grid-area: 5 / 1 / 6 / 2;
+      }
+    }
+    .div6 {
+      background-image: url('../img/personal_item_6.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      grid-area: 6 / 1 / 8 / 2;
+      height: rem(370);
+      margin-top: rem(-70);
+
+      @media (max-width:$tablet){
+        height: auto;
+        margin-top: rem(0);
+        grid-area: 3 / 1 / 4 / 2;
+      }
+
+      @media (max-width:$mobile){
+        display: none; 
+      }
+    }
+}

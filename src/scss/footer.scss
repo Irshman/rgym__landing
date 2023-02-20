@@ -1,0 +1,120 @@
+//====================================================================================================
+.footer {
+  padding: rem(45) 0;
+
+  &__container {
+  }
+
+  &__top {
+    @include flex(space-between);
+    align-items: start;
+    @include adaptiveValue("margin-bottom", 70, 20, 768, 320, 1);
+
+    @media (max-width:$tablet){
+      flex-direction: column;
+      row-gap: rem(30);
+    }
+  }
+
+  &__info {
+    max-width: rem(380);
+    width: 100%;
+    margin-right: rem(40);
+    @media (max-width:$tablet){
+      margin-right: rem(0);
+    }
+  }
+
+  &__logo {
+    margin-bottom: rem(5);
+  }
+
+  &__text {
+  }
+
+  &__nav {
+    @include flex(space-between);
+    @include adaptiveValue("column-gap", 160, 40, 1024, 768, 1);
+  }
+
+  &__wrap {
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: rem(24);
+    line-height: math.div(21, 24);
+    margin-bottom: rem(45);
+  }
+
+  &__list {
+  }
+
+  &__item {
+    transition: $trs;
+    @media (any-hover: hover){
+      &:hover{
+        color: $primaryColor;
+      }
+    }
+  }
+
+  &__link {
+  }
+
+  &__social {
+    margin-left: rem(40);
+
+    @media (max-width:$tablet){
+      margin-left: rem(0);
+    }
+  }
+
+  &__bottom {
+    font-size: rem(16);
+    line-height: math.div(26, 16);
+    text-align: center;
+    padding: rem(31) 0;
+    
+    span {
+      color: $primaryColor;
+    }
+
+    @media (any-hover: hover){
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.social-footer {
+
+  &__list {
+    @include flex(start);
+    column-gap: rem(9);
+  }
+
+  &__item {
+    width: rem(43);
+    height: rem(43);
+    background-color: $grey;
+    @include flex(center);
+    transition: $trs;
+
+    @media (any-hover: hover){
+      &:hover{
+        transform: scale(1.2)
+      }
+    }
+  }
+
+  &__link {
+    @include flex(center);
+
+    svg path {
+      fill: $primaryColor;
+    }
+  }
+}
+
+//====================================================================================================
